@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DealPrism - UK Deals</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f8f9fa; }
+        h1 { color: #1a73e8; }
+        .search-box { margin: 20px 0; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        input[type="text"] { padding: 12px; width: 60%; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 12px 24px; background: #1a73e8; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #1557b0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f1f1f1; }
+        .price { font-weight: bold; color: #d32f2f; }
+        a { color: #1a73e8; }
+    </style>
+</head>
+<body>
+    <h1>🔍 DealPrism - UK Deal Finder</h1>
+    
+    <div class="search-box">
+        <form method="post">
+            <input type="text" name="query" value="{{ query }}" placeholder="What are you looking for? (e.g. wireless headphones, ps5, laptop)">
+            <button type="submit">🔎 Search Deals</button>
+        </form>
+    </div>
+
+    {% if results %}
+        <h2>Results for "{{ query }}"</h2>
+        {{ results|safe }}
+    {% elif request.method == "POST" %}
+        <p>No results found or scraping failed. Try a different search term.</p>
+    {% endif %}
+
+    <p><small>⚠️ Scraping websites can be slow. Results are best-effort and sites change often. Use responsibly.</small></p>
+</body>
+</html>
