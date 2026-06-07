@@ -58,6 +58,6 @@ def get_top_deals():
             'Avg £': avg,
             'Suggested Sell £': suggested,
             'Est. Profit £': profit,
-            'Link': f'<a href="{item["url"]}" target="_blank">View on Argos</a>'
+            'Link': f'<a href="{item["url"]}" target="_blank">🔗 View on Argos</a>'
         })
     return data
