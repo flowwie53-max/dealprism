@@ -5,28 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DealPrism 🔫</title>
     <style>
-        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin:0; padding:20px; }
-        .container { max-width: 1200px; margin:auto; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); overflow:hidden; }
-        header { background:#1e40af; color:white; padding:30px; text-align:center; }
-        h1 { margin:0; font-size:2.5em; }
-        .content { padding:25px; }
-        table { width:100%; border-collapse:collapse; }
-        th, td { padding:14px; text-align:left; border-bottom:1px solid #ddd; }
-        th { background:#f1f5f9; }
-        .profit { font-weight:bold; color:#16a34a; }
-        a { color:#2563eb; }
-        tr:hover { background:#f8fafc; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin:0; padding:40px; color:white; text-align:center; }
+        .card { background:white; color:#1e3a8a; max-width:900px; margin:40px auto; padding:50px; border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,0.4); }
+        h1 { font-size:3em; margin:0 0 20px 0; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🔫 DealPrism</h1>
-            <p>Argos Top Deals • Profit Finder</p>
-        </header>
-        <div class="content">
-            {{ results|safe }}
-        </div>
+    <div class="card">
+        <h1>🔫 DealPrism</h1>
+        <p style="font-size:1.5em;">Argos Top Deals • Resale Profit Finder</p>
+        {{ results|safe }}
     </div>
 </body>
 </html>
