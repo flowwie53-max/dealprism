@@ -2,41 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DealPrism 🔍</title>
+    <title>DealPrism</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-        .container { max-width: 1200px; margin: 20px auto; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; }
-        header { background: #1e3a8a; color: white; padding: 25px; text-align: center; }
-        .search-box { padding: 30px; text-align: center; background: #f8fafc; }
-        input { padding: 16px; width: 65%; font-size: 18px; border: 2px solid #cbd5e1; border-radius: 50px; }
-        button { padding: 16px 32px; font-size: 18px; background: #3b82f6; color: white; border: none; border-radius: 50px; cursor: pointer; margin-left: 10px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 14px; border-bottom: 1px solid #eee; }
-        th { background: #f1f5f9; }
-        .price { font-weight: bold; color: #e11d48; }
-        a { color: #3b82f6; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin:0; padding:20px; }
+        .container { max-width: 1400px; margin:auto; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); overflow:hidden; }
+        header { background:#1e40af; color:white; padding:25px; text-align:center; }
+        table { width:100%; border-collapse:collapse; }
+        th, td { padding:14px; text-align:left; border-bottom:1px solid #ddd; }
+        th { background:#f1f5f9; }
+        .profit { font-weight:bold; color:#16a34a; }
+        a { color:#2563eb; }
+        tr:hover { background:#f8fafc; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🔍 DealPrism</h1>
-            <p>Real UK Deals • Price Comparison • Best Deals Highlighted</p>
+            <h1>🔫 DealPrism</h1>
+            <p>Argos Top Deals → Resale Profit Finder</p>
         </header>
-        
-        <div class="search-box">
-            <form method="post">
-                <input type="text" name="query" value="{{ query }}" placeholder="Search products (laptop, headphones, ps5, etc)">
-                <button type="submit">Search Across Shops</button>
-            </form>
+        <div style="padding:25px;">
+            {{ results|safe }}
         </div>
-
-        {% if results %}
-            <div style="padding: 20px;">
-                {{ results|safe }}
-            </div>
-        {% endif %}
     </div>
 </body>
 </html>
