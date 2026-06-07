@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DealPrism 🔫</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin:0; padding:20px; }
-        .container { max-width: 1300px; margin:auto; background:white; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.3); overflow:hidden; }
-        header { background:#1e40af; color:white; padding:35px; text-align:center; }
-        h1 { margin:0; font-size:2.6em; }
-        .content { padding:30px; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin:0; padding:20px; }
+        .container { max-width: 1200px; margin:auto; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); overflow:hidden; }
+        header { background:#1e40af; color:white; padding:30px; text-align:center; }
+        h1 { margin:0; font-size:2.5em; }
         table { width:100%; border-collapse:collapse; }
-        th, td { padding:16px; text-align:left; border-bottom:1px solid #ddd; }
+        th, td { padding:14px; text-align:left; border-bottom:1px solid #ddd; }
         th { background:#f1f5f9; }
         .profit { font-weight:bold; color:#16a34a; }
-        a { color:#2563eb; font-weight:bold; }
+        a { color:#2563eb; }
         tr:hover { background:#f8fafc; }
     </style>
 </head>
@@ -22,9 +21,9 @@
     <div class="container">
         <header>
             <h1>🔫 DealPrism</h1>
-            <p>Argos Top Deals • Resale Profit Finder</p>
+            <p>Argos Top Deals • Profit Finder</p>
         </header>
-        <div class="content">
+        <div style="padding:25px;">
             {{ results|safe }}
         </div>
     </div>

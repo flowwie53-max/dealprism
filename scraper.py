@@ -17,7 +17,7 @@ def scrape_argos_top_deals():
         r = requests.get(url, headers=headers, timeout=10)
         soup = BeautifulSoup(r.text, 'html.parser')
         products = []
-        for item in soup.find_all('div', {'data-test': 'product-card'})[:20]:
+        for item in soup.find_all('div', {'data-test': 'product-card'})[:15]:
             name = item.find('h3')
             price = item.find('span', {'data-test': 'price'})
             link = item.find('a')
