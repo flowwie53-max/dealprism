@@ -9,6 +9,7 @@
         .container { max-width: 1200px; margin:auto; background:white; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); overflow:hidden; }
         header { background:#1e40af; color:white; padding:30px; text-align:center; }
         h1 { margin:0; font-size:2.5em; }
+        .content { padding:25px; }
         table { width:100%; border-collapse:collapse; }
         th, td { padding:14px; text-align:left; border-bottom:1px solid #ddd; }
         th { background:#f1f5f9; }
@@ -23,7 +24,7 @@
             <h1>🔫 DealPrism</h1>
             <p>Argos Top Deals • Profit Finder</p>
         </header>
-        <div style="padding:25px;">
+        <div class="content">
             {{ results|safe }}
         </div>
     </div>
