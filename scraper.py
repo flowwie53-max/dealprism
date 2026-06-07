@@ -17,13 +17,13 @@ def scrape_argos_top_deals():
         r = requests.get(url, headers=headers, timeout=10)
         soup = BeautifulSoup(r.text, 'html.parser')
         products = []
-        for item in soup.find_all('div', {'data-test': 'product-card'})[:20]:
+        for item in soup.find_all('div', {'data-test': 'product-card'})[:25]:
             name = item.find('h3')
             price = item.find('span', {'data-test': 'price'})
             link = item.find('a')
             if name and price:
                 products.append({
-                    'name': name.get_text(strip=True)[:75],
+                    'name': name.get_text(strip=True)[:80],
                     'price': clean_price(price.get_text()),
                     'url': 'https://www.argos.co.uk' + link['href'] if link else ''
                 })
@@ -31,12 +31,12 @@ def scrape_argos_top_deals():
     except:
         return []
 
-def get_top_deals():
+def get_deals():
     items = scrape_argos_top_deals()
     data = []
     for item in items:
         if not item.get('price'): continue
-        suggested = round(item['price'] * 1.20, 2)
+        suggested = round(item['price'] * 1.18, 2)  # 18% markup for resale
         profit = round(suggested - item['price'], 2)
         data.append({
             'Product': item['name'],
