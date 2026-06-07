@@ -17,7 +17,7 @@ def scrape_argos_top_deals():
         r = requests.get(url, headers=headers, timeout=15)
         soup = BeautifulSoup(r.text, 'html.parser')
         products = []
-        for item in soup.find_all('div', {'data-test': 'product-card'})[:30]:
+        for item in soup.find_all('div', {'data-test': 'product-card'})[:25]:
             name = item.find('h3')
             price = item.find('span', {'data-test': 'price'})
             link = item.find('a')
@@ -33,7 +33,7 @@ def scrape_argos_top_deals():
 
 def quick_ebay_check(name):
     try:
-        q = '+'.join(name.split()[:6])
+        q = '+'.join(name.split()[:5])
         r = requests.get(f"https://www.ebay.co.uk/sch/i.html?_nkw={q}", headers=headers, timeout=8)
         soup = BeautifulSoup(r.text, 'html.parser')
         price = soup.find('span', class_='s-item__price')
@@ -48,16 +48,16 @@ def get_top_deals():
         if not item.get('argos_price'): continue
         ebay_p = quick_ebay_check(item['name'])
         avg = round((item['argos_price'] + (ebay_p or item['argos_price'])) / 2, 2)
-        suggested = round(item['argos_price'] * 1.20, 2)   # 20% markup
+        suggested = round(item['argos_price'] * 1.20, 2)
         profit = round(suggested - item['argos_price'], 2)
         
         data.append({
-            'Product': item['name'][:80],
+            'Product': item['name'][:75],
             'Argos Price £': item['argos_price'],
-            'eBay ~Price £': ebay_p or '—',
-            'Avg Price £': avg,
+            'eBay ~£': ebay_p or '—',
+            'Avg £': avg,
             'Suggested Sell £': suggested,
             'Est. Profit £': profit,
-            'View': f'<a href="{item["url"]}" target="_blank">🔗 Argos</a>'
+            'Link': f'<a href="{item["url"]}" target="_blank">View on Argos</a>'
         })
     return data

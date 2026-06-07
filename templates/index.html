@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DealPrism 🔫</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin:0; padding:20px; color:#333; }
-        .container { max-width: 1400px; margin:auto; background:white; border-radius:16px; box-shadow:0 15px 35px rgba(0,0,0,0.3); overflow:hidden; }
-        header { background:#1e40af; color:white; padding:30px; text-align:center; }
-        h1 { margin:0; font-size:2.6em; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #0f172a, #1e40af); margin:0; padding:20px; }
+        .container { max-width: 1400px; margin:auto; background:white; border-radius:16px; box-shadow:0 15px 40px rgba(0,0,0,0.4); overflow:hidden; }
+        header { background: linear-gradient(to right, #1e40af, #3b82f6); color:white; padding:35px; text-align:center; }
+        h1 { margin:0; font-size:2.8em; }
         .content { padding:30px; }
         table { width:100%; border-collapse:collapse; }
-        th, td { padding:16px; text-align:left; border-bottom:1px solid #eee; }
+        th, td { padding:16px; text-align:left; border-bottom:1px solid #e2e8f0; }
         th { background:#f1f5f9; }
-        .profit { font-weight:bold; color:#16a34a; font-size:1.1em; }
+        .profit { font-weight:bold; color:#16a34a; font-size:1.15em; }
         a { color:#2563eb; font-weight:bold; }
         tr:hover { background:#f0f9ff; }
+        .spinner { text-align:center; padding:40px; font-size:1.2em; color:#64748b; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🔫 DealPrism</h1>
-            <p>Argos Top 100 Deals → Real Resale Profit Finder</p>
+            <p>Argos Top Deals • Smart Resale Opportunities</p>
         </header>
         <div class="content">
             {{ results|safe }}
